@@ -1,10 +1,11 @@
 <div class="app-container">
-  <app-sidebar></app-sidebar>
+  <app-header class="header"></app-header>
+  <app-sidebar class="sidebar"></app-sidebar>
   <div class="form-container">
     <div class="form">
-      <app-company-infos *ngIf="currentStep >= 1" (nextStep)="goToNextStep()"></app-company-infos>
-      <app-super-visor *ngIf="currentStep >= 2" (nextStep)="goToNextStep()"></app-super-visor>
-      <app-student-infos *ngIf="currentStep >= 3" (nextStep)="goToNextStep()"></app-student-infos>
+      <app-company-infos></app-company-infos>
+      <app-superviser-infos ></app-superviser-infos>
+      <app-student-infos></app-student-infos>
     </div>
   </div>
 </div>

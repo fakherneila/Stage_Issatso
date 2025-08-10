@@ -4,10 +4,11 @@ import { Sidebar } from "./sidebar/sidebar";
 import { CompanyInfosComponent } from "./company-infos/company-infos";
 import { SuperviserInfosComponent } from "./superviser-infos/superviser-infos";
 import { StudentInfosComponent } from "./student-infos/student-infos";
+import { Header } from "./header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent],
+  imports: [RouterOutlet, Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
