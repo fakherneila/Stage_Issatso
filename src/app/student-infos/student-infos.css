@@ -1,0 +1,68 @@
+.student-form-container {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-section {
+  border: 2px solid #007bff;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.next-step {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.next-step:hover {
+  background-color: #0056b3;
+}
+
+.icon-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.icon.delete {
+  background-color: #ff4444;
+}
+
+.icon.mute {
+  background-color: #4444ff;
+}

@@ -1,0 +1,31 @@
+<div class="company-form-container">
+  <div class="form-section">
+    <label for="societe">Société</label>
+    <input type="text" id="societe" name="societe" placeholder="Société">
+
+    <label for="domaine">Domaine d'activité</label>
+    <input type="text" id="domaine" name="domaine" placeholder="Domaine d'activité">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Email">
+
+    <div class="address-section">
+      <label for="adresse">Adresse</label>
+      <input type="text" id="adresse" name="adresse" placeholder="Adresse">
+    </div>
+
+    <div class="phone-section">
+      <label for="telephone">Téléphone</label>
+      <input type="tel" id="telephone" name="telephone" placeholder="Téléphone">
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <button class="next-step" (click)="nextStep.emit()">étape suivante</button>
+    <!-- <div class="icon-bar">
+      <span class="icon delete"></span>
+      <span class="icon mute"></span>
+      <span class="icon dots"></span>
+    </div> -->
+  </div>
+</div>
