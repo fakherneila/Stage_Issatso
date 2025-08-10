@@ -5,10 +5,11 @@ import { CompanyInfosComponent } from "./company-infos/company-infos";
 import { SuperviserInfosComponent } from "./superviser-infos/superviser-infos";
 import { StudentInfosComponent } from "./student-infos/student-infos";
 import { Header } from "./header/header";
+import { Aside } from "./aside/aside";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent, Header],
+  imports: [RouterOutlet, Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent, Header, Aside],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
