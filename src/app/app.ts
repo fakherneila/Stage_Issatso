@@ -9,7 +9,7 @@ import { Aside } from "./aside/aside";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent, Header, Aside],
+  imports: [ Sidebar, CompanyInfosComponent, SuperviserInfosComponent, StudentInfosComponent, Header, Aside],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
