@@ -1,31 +1,34 @@
-<div class="company-form-container">
+<div class="company-form-container" [formGroup]="companyForm">
   <div class="form-section">
     <label for="societe">Société</label>
-    <input type="text" id="societe" name="societe" placeholder="Société">
+    <input type="text" id="societe" formControlName="societe" placeholder="Société" required>
 
     <label for="domaine">Domaine d'activité</label>
-    <input type="text" id="domaine" name="domaine" placeholder="Domaine d'activité">
+    <input type="text" id="domaine" formControlName="domaine" placeholder="Domaine d'activité" required>
 
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Email">
+    <input type="email" id="email" formControlName="email" placeholder="Email" required>
+    <div *ngIf="companyForm.get('email')?.invalid && companyForm.get('email')?.touched" class="error-message">
+      Please enter a valid email address
+    </div>
 
     <div class="address-section">
       <label for="adresse">Adresse</label>
-      <input type="text" id="adresse" name="adresse" placeholder="Adresse">
+      <input type="text" id="adresse" formControlName="adresse" placeholder="Adresse" required>
     </div>
 
     <div class="phone-section">
       <label for="telephone">Téléphone</label>
-      <input type="tel" id="telephone" name="telephone" placeholder="Téléphone">
+      <input type="tel" id="telephone" formControlName="telephone" placeholder="Téléphone" required>
     </div>
   </div>
 
   <div class="action-buttons">
-    <button class="next-step" (click)="nextStep.emit()">étape suivante</button>
-    <!-- <div class="icon-bar">
-      <span class="icon delete"></span>
-      <span class="icon mute"></span>
-      <span class="icon dots"></span>
-    </div> -->
+    <button 
+      class="next-step" 
+      (click)="onNext()" 
+      [disabled]="companyForm.invalid">
+      étape suivante
+    </button>
   </div>
 </div>

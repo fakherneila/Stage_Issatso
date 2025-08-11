@@ -73,3 +73,33 @@ input {
   align-items: center;
   justify-content: center;
 } */
+ .error-message {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.next-step:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.previous-step {
+   background-color: #e95fff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.previous-step:hover {
+   background-color: #b042f0;
+}

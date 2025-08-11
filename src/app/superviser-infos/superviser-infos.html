@@ -1,29 +1,49 @@
-<div class="supervisor-form-container">
+<div class="supervisor-form-container" [formGroup]="supervisorForm">
   <div class="form-section">
     <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" placeholder="Nom">
+    <input type="text" id="nom" formControlName="nom" placeholder="Nom" required>
+    <div *ngIf="supervisorForm.get('nom')?.invalid && supervisorForm.get('nom')?.touched" class="error-message">
+      Nom est requis
+    </div>
 
     <label for="prenom">Prénom</label>
-    <input type="text" id="prenom" name="prenom" placeholder="Prénom">
+    <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom" required>
+    <div *ngIf="supervisorForm.get('prenom')?.invalid && supervisorForm.get('prenom')?.touched" class="error-message">
+      Prénom est requis
+    </div>
 
     <label for="adresse">Adresse</label>
-    <input type="text" id="adresse" name="adresse" placeholder="Adresse">
+    <input type="text" id="adresse" formControlName="adresse" placeholder="Adresse" required>
+    <div *ngIf="supervisorForm.get('adresse')?.invalid && supervisorForm.get('adresse')?.touched" class="error-message">
+      Adresse est requise
+    </div>
 
     <label for="email">Adresse Mail</label>
-    <input type="email" id="email" name="email" placeholder="Adresse Mail">
+    <input type="email" id="email" formControlName="email" placeholder="Adresse Mail" required>
+    <div *ngIf="supervisorForm.get('email')?.invalid && supervisorForm.get('email')?.touched" class="error-message">
+      Veuillez entrer une adresse email valide
+    </div>
 
     <label for="numTel">Num Tel</label>
-    <input type="tel" id="numTel" name="numTel" placeholder="Num Tel">
+    <input type="tel" id="numTel" formControlName="numTel" placeholder="Num Tel" required>
+    <div *ngIf="supervisorForm.get('numTel')?.invalid && supervisorForm.get('numTel')?.touched" class="error-message">
+      Numéro de téléphone est requis
+    </div>
 
     <label for="autreNumTel">Autre Num Tel (optionnel)</label>
-    <input type="tel" id="autreNumTel" name="autreNumTel" placeholder="Autre Num Tel (optionnel)">
+    <input type="tel" id="autreNumTel" formControlName="autreNumTel" placeholder="Autre Num Tel (optionnel)">
 
     <label for="fonction">Fonction dans la société</label>
-    <input type="text" id="fonction" name="fonction" placeholder="CTO, CEO...">
+    <input type="text" id="fonction" formControlName="fonction" placeholder="CTO, CEO..." required>
+    <div *ngIf="supervisorForm.get('fonction')?.invalid && supervisorForm.get('fonction')?.touched" class="error-message">
+      Fonction est requise
+    </div>
   </div>
 
   <div class="action-buttons">
-    <button class="next-step" (click)="nextStep.emit()">étape suivante</button>
-    
+    <button class="previous-step" (click)="onPrevious()">Précédent</button>
+    <button class="next-step" (click)="onNext()" [disabled]="supervisorForm.invalid">
+      étape suivante
+    </button>
   </div>
 </div>

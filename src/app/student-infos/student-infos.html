@@ -1,26 +1,46 @@
-<div class="student-form-container">
+<div class="student-form-container" [formGroup]="studentForm">
   <div class="form-section">
     <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" placeholder="Nom">
+    <input type="text" id="nom" formControlName="nom" placeholder="Nom" required>
+    <div *ngIf="studentForm.get('nom')?.invalid && studentForm.get('nom')?.touched" class="error-message">
+      Nom est requis
+    </div>
 
     <label for="prenom">Prénom</label>
-    <input type="text" id="prenom" name="prenom" placeholder="Prénom">
+    <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom" required>
+    <div *ngIf="studentForm.get('prenom')?.invalid && studentForm.get('prenom')?.touched" class="error-message">
+      Prénom est requis
+    </div>
 
     <label for="niveau">Niveau</label>
-    <input type="text" id="niveau" name="niveau" placeholder="Niveau">
+    <input type="text" id="niveau" formControlName="niveau" placeholder="Niveau" required>
+    <div *ngIf="studentForm.get('niveau')?.invalid && studentForm.get('niveau')?.touched" class="error-message">
+      Niveau est requis
+    </div>
 
     <label for="numTel">Num Tel</label>
-    <input type="tel" id="numTel" name="numTel" placeholder="Num Tel">
+    <input type="tel" id="numTel" formControlName="numTel" placeholder="Num Tel" required>
+    <div *ngIf="studentForm.get('numTel')?.invalid && studentForm.get('numTel')?.touched" class="error-message">
+      Numéro de téléphone est requis
+    </div>
 
     <label for="gmail">Gmail</label>
-    <input type="email" id="gmail" name="gmail" placeholder="Gmail">
+    <input type="email" id="gmail" formControlName="gmail" placeholder="Gmail" required>
+    <div *ngIf="studentForm.get('gmail')?.invalid && studentForm.get('gmail')?.touched" class="error-message">
+      Veuillez entrer une adresse email valide
+    </div>
 
     <label for="specialite">Spécialité</label>
-    <input type="text" id="specialite" name="specialite" placeholder="Spécialité">
+    <input type="text" id="specialite" formControlName="specialite" placeholder="Spécialité" required>
+    <div *ngIf="studentForm.get('specialite')?.invalid && studentForm.get('specialite')?.touched" class="error-message">
+      Spécialité est requise
+    </div>
   </div>
 
-  <div class="action-buttons">
-    <button class="next-step">étape suivante</button>
-    
+   <div class="action-buttons">
+    <button class="previous-step" (click)="onPrevious()">Précédent</button>
+    <button class="submit-button" (click)="onSubmit()" [disabled]="studentForm.invalid">
+      Soumettre
+    </button>
   </div>
 </div>
