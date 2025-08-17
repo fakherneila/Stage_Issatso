@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {  SidebarComponent } from './sidebar';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+import { DeposerRapport } from './deposer-rapport';
+
+describe('DeposerRapport', () => {
+  let component: DeposerRapport;
+  let fixture: ComponentFixture<DeposerRapport>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidebarComponent]
+      imports: [DeposerRapport]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidebarComponent);
+    fixture = TestBed.createComponent(DeposerRapport);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

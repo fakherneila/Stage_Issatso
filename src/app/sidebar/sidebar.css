@@ -24,5 +24,72 @@ p:hover {
 .sidebar {
     width: 250px;
     position: relative;
-    top: 50px;
+    top: 25px;
+    left: 10px;
+    
+}
+.sidebar {
+  width: 280px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-item:hover {
+  background-color: #0056b3;
+}
+
+.menu-title {
+  margin-left: 5px;
+}
+
+mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.submenu {
+  margin-top: 5px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  color: #333;
+}
+
+.radio-icon {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.submenu-item a {
+  text-decoration: none;
+  color: #333;
+  flex-grow: 1;
+}
+
+.submenu-item a:hover {
+  color: #007bff;
 }

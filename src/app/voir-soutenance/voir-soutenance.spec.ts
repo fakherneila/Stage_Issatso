@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {  SidebarComponent } from './sidebar';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+import { VoirSoutenance } from './voir-soutenance';
+
+describe('VoirSoutenance', () => {
+  let component: VoirSoutenance;
+  let fixture: ComponentFixture<VoirSoutenance>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidebarComponent]
+      imports: [VoirSoutenance]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidebarComponent);
+    fixture = TestBed.createComponent(VoirSoutenance);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

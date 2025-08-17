@@ -1,6 +1,27 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app';  // Change to AppComponent and correct file name if renamed to app.component.ts
+import { AppComponent } from './app/app';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { FormContainerComponent } from './app/form-container/form-container';
+import { DeposerRapportComponent } from './app/deposer-rapport/deposer-rapport';
+import { VoirSoutenanceComponent } from './app/voir-soutenance/voir-soutenance';
+import { HistoriqueComponent } from './app/historique/historique';
+import { DefaultComponent } from './app/default/default';
 
-bootstrapApplication(AppComponent, appConfig)
+// Explicitly type the routes array as Routes
+const routes: import('@angular/router').Routes = [
+  { path: 'remplir-formulaire', component: FormContainerComponent },
+  { path: 'deposer-rapport', component: DeposerRapportComponent },
+  { path: 'voir-soutenance', component: VoirSoutenanceComponent },
+  { path: 'historique', component: HistoriqueComponent },
+  { path: '', component: DefaultComponent, pathMatch: 'full' as const } // Use 'full' as a literal type
+];
+
+// Merge appConfig providers with routing
+const updatedConfig = {
+  ...appConfig,
+  providers: [...(appConfig.providers || []), provideRouter(routes, withComponentInputBinding())]
+};
+
+bootstrapApplication(AppComponent, updatedConfig)
   .catch((err) => console.error(err));

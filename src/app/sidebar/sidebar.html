@@ -1,8 +1,12 @@
-
-
-<div>
-    <!-- Spatial Audio Icon: <span class="material-icons"> {{ SpatialAudioIcon.name }} </span> -->
-     <!-- <mat-icon>home</mat-icon> -->
-<p> Stage</p>
-
+<div class="sidebar">
+  <div class="menu-item" (click)="toggleStage()">
+    <span class="menu-title">Stage</span>
+    <mat-icon>{{ isStageOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </div>
+  <div class="submenu" *ngIf="isStageOpen">
+    <div class="submenu-item" *ngFor="let item of stageItems">
+      <span class="radio-icon"></span>
+      <a [routerLink]="item.route">{{ item.label }}</a>
+    </div>
+  </div>
 </div>
