@@ -12,12 +12,14 @@ header {
   display: flex;
   align-items: center;
   gap: 15px;
-  color: blue;
+  color: rgb(255, 255, 255);
 }
 
 .menu-icon {
   font-size: 22px;
   cursor: pointer;
+  background-color: rgb(68, 121, 163);
+  padding: 30px;
 }
 
 .menu-logo img {

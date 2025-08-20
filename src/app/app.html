@@ -1,16 +1,15 @@
-<div class="app-container">
-  <app-header class="header"></app-header>
-  <app-sidebar class="sidebar"></app-sidebar>
+<div class="header">
+  <app-header></app-header>
 
-  <div class="main-content">
-    <div class="form">
-      <app-company-infos></app-company-infos>
-      <app-superviser-infos></app-superviser-infos>
-      <app-student-infos></app-student-infos>
-    </div>
-
-    <div class="aside">
-      <app-aside></app-aside>
-    </div>
+</div>
+<div class="main-content">
+  <div class="sidebar-container">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="aside">
+    <app-aside></app-aside>
   </div>
 </div>

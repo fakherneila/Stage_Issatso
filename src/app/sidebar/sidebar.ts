@@ -14,9 +14,9 @@ export class SidebarComponent {
   isStageOpen = false;
   stageItems = [
     { label: 'Remplir formulaire', route: '/remplir-formulaire' },
-    { label: 'Déposer rapport', route: '/deposer-rapport' },
-    { label: 'Voir soutenance', route: '/voir-soutenance' },
-    { label: 'Historique', route: '/historique' }
+  { label: 'Déposer rapport', route: '/deposer-rapport' },
+  { label: 'Voir soutenance', route: '/voir-soutenance' },
+  { label: 'Historique', route: '/historique' }
   ];
 
   toggleStage() {
