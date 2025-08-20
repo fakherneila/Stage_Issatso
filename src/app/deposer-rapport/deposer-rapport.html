@@ -1,1 +1,26 @@
-<p>deposer-rapport works!</p>
+<div class="rapport-container">
+  <h2>Déposer Rapport</h2>
+
+  <form [formGroup]="rapportForm" (ngSubmit)="onSubmit()">
+
+    <label for="nom">Nom</label>
+    <input id="nom" type="text" formControlName="nom" placeholder="Entrez votre nom">
+
+    <label for="prenom">Prénom</label>
+    <input id="prenom" type="text" formControlName="prenom" placeholder="Entrez votre prénom">
+
+    <label for="codeSujet">Code Sujet</label>
+    <input id="codeSujet" type="text" formControlName="codeSujet" placeholder="Entrez le code du sujet">
+
+    <label for="versionPdf">Version PDF</label>
+    <input id="versionPdf" type="file" formControlName="versionPdf" accept="application/pdf">
+
+    <label for="urlOverleaf">Lien Overleaf (optionnel)</label>
+    <input id="urlOverleaf" type="url" formControlName="urlOverleaf" placeholder="https://overleaf.com/...">
+
+    <label for="motCle">Mot Clé</label>
+    <input id="motCle" type="text" formControlName="motCle" placeholder="Ex: IA, Angular, Big Data">
+
+    <button type="submit" [disabled]="rapportForm.invalid">Soumettre</button>
+  </form>
+</div>
