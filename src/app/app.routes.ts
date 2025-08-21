@@ -1,10 +1,21 @@
 import { Routes } from '@angular/router';
-import { FormContainerComponent } from './form-container/form-container';
-import { DeposerRapportComponent } from './deposer-rapport/deposer-rapport';
-import { VoirSoutenanceComponent } from './voir-soutenance/voir-soutenance';
-import { HistoriqueComponent } from './historique/historique';
+
+// Student Components
+import { FormContainerComponent } from './Student/form-container/form-container';
+import { DeposerRapportComponent } from './Student/deposer-rapport/deposer-rapport';
+import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance';
+import { HistoriqueComponent } from './Student/historique/historique';
+
+// // Admin Components
+// import { ValiderComponent } from './Admin/valider/valider';
+// import { AdminDashboardComponent } from './Admin/dashboard/dashboard';
+
+// // Prof Components
+// import { ProfDashboardComponent } from './Prof/dashboard/dashboard';
+// import { ProfSoutenancesComponent } from './Prof/soutenances/soutenances';
 
 export const routes: Routes = [
+  // Student routes
   {
     path: 'remplir-formulaire',
     component: FormContainerComponent
@@ -21,8 +32,29 @@ export const routes: Routes = [
     path: 'historique',
     component: HistoriqueComponent
   },
-  {
-    path: '**',
-    redirectTo: 'remplir-formulaire'
-  }
-];
+
+//   // Admin routes (grouped under /admin)
+//   {
+//     path: 'admin',
+//     children: [
+//       { path: '', component: AdminDashboardComponent }, // /admin
+//       { path: 'valider', component: ValiderComponent }, // /admin/valider
+//       { path: 'historique', component: HistoriqueComponent } // /admin/historique (example)
+//     ]
+//   },
+
+//   // Prof routes (grouped under /prof)
+//   {
+//     path: 'prof',
+//     children: [
+//       { path: '', component: ProfDashboardComponent }, // /prof
+//       { path: 'soutenances', component: ProfSoutenancesComponent } // /prof/soutenances
+//     ]
+//   },
+
+//   // Default redirect
+//   {
+//     path: '**',
+//     redirectTo: 'remplir-formulaire'
+//   }
+ ];
