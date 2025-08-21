@@ -5,6 +5,9 @@ import { FormContainerComponent } from './Student/form-container/form-container'
 import { DeposerRapportComponent } from './Student/deposer-rapport/deposer-rapport';
 import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance';
 import { HistoriqueComponent } from './Student/historique/historique';
+import { DemandeEncadrement } from './Prof/demande-encadrement/demande-encadrement';
+import { E } from '@angular/cdk/keycodes';
+import { Encadrement } from './Prof/encadrement/encadrement';
 
 // // Admin Components
 // import { ValiderComponent } from './Admin/valider/valider';
@@ -44,17 +47,18 @@ export const routes: Routes = [
 //   },
 
 //   // Prof routes (grouped under /prof)
-//   {
-//     path: 'prof',
-//     children: [
-//       { path: '', component: ProfDashboardComponent }, // /prof
-//       { path: 'soutenances', component: ProfSoutenancesComponent } // /prof/soutenances
-//     ]
-//   },
+  {
+    path: 'prof',
+    children: [
+      { path: 'demande-encadrement', component: DemandeEncadrement }, // /prof
+      { path: 'soutenances', component: VoirSoutenanceComponent }, // /prof/soutenances
+      { path: 'encadrement', component: Encadrement } // /prof/encadrement
+    ]
+  },
 
-//   // Default redirect
-//   {
-//     path: '**',
-//     redirectTo: 'remplir-formulaire'
-//   }
+  // Default redirect
+  {
+    path: '**',
+    redirectTo: 'remplir-formulaire'
+  }
  ];
