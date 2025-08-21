@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { SidebarComponent } from "./sidebar/sidebar";
-import { CompanyInfosComponent } from "./company-infos/company-infos";
-import { SuperviserInfosComponent } from "./superviser-infos/superviser-infos";
-import { StudentInfosComponent } from "./student-infos/student-infos";
-import { Header } from "./header/header";
-import { Aside } from "./aside/aside";
+import { SidebarComponent } from "./Student/sidebar/sidebar";
+import { CompanyInfosComponent } from "./Student/company-infos/company-infos";
+import { SuperviserInfosComponent } from "./Student/superviser-infos/superviser-infos";
+import { StudentInfosComponent } from "./Student/student-infos/student-infos";
+import { Header } from "./Student/header/header";
+import { Aside } from "./Student/aside/aside";
 
 
 @Component({
