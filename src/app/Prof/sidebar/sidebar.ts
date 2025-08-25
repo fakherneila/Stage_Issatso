@@ -10,13 +10,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
-export class SidebarComponent {
+export class SidebarProfComponent {
   isStageOpen = false;
   stageItems = [
     { label: 'Encadrement', route: '/prof/encadrement' },
-  { label: 'Demande Encadrement', route: '/prof/demande-encadrement' },
-  { label: 'Voir soutenance', route: '/prof/voir-soutenance' },
-  // { label: 'Historique', route: '/prof/historique' }
+    { label: 'Demande Encadrement', route: '/prof/demande-encadrement' },
+    { label: 'Voir Soutenance', route: '/prof/soutenances' }, // Updated to match routes.ts
+    // { label: 'Historique', route: '/prof/historique' }
   ];
 
   toggleStage() {

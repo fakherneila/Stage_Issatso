@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-voir-soutounance',
+  selector: 'app-voir-soutounance-prof',
+  standalone: true,
   imports: [],
-  templateUrl: './voir-soutounance.html',
-  styleUrl: './voir-soutounance.css'
+  templateUrl: './voir-soutounance-prof.html',
+  styleUrl: './voir-soutounance-prof.css'
 })
-export class VoirSoutounance {
+export class VoirSoutounanceComponent {
 
 }
