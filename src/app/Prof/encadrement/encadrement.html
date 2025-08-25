@@ -1,1 +1,26 @@
-<p>encadrement works!</p>
+<div class="encadrement-container">
+  <h2>Les rapports</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom et prénom</th>
+        <th>Email</th>
+        <th>Version PDF</th>
+        <th>Modifier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>
+          <img [src]="report.avatar" alt="Profile" class="profile-img">
+          {{ report.name }}
+        </td>
+        <td>{{ report.email }}</td>
+        <td><a href="{{ report.reportLink }}" target="_blank">Télécharger</a></td>
+        <td>
+          <a href="{{ report.overleafLink }}" target="_blank" *ngIf="report.overleafLink">https://www.overleaf.com/Darlene</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

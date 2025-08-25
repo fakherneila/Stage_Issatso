@@ -1,1 +1,40 @@
-<p>demande-encadrement works!</p>
+<div class="demande-encadrement-container">
+  <h2>Demandes d'encadrement</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom et prénom</th>
+        <th>Email</th>
+        <th>Statut</th>
+        <th>Date de soumission</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests">
+        <td>
+          <img [src]="request.avatar" alt="Profile" class="profile-img">
+          {{ request.name }}
+        </td>
+        <td>{{ request.email }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.submissionDate }}</td>
+        <td>
+          <div *ngIf="request.status === 'En attente' && !request.isModifying" class="action-buttons">
+            <button (click)="approveRequest(request)" class="approve">Approuver</button>
+            <button (click)="rejectRequest(request)" class="reject">Rejeter</button>
+            <button (click)="abandonRequest(request)" class="abandon">Abandonner</button>
+          </div>
+          <div *ngIf="request.status !== 'En attente' && !request.isModifying" class="action-buttons">
+            <button (click)="toggleModify(request)" class="modify">Modifier</button>
+          </div>
+          <div *ngIf="request.isModifying" class="action-buttons">
+            <button (click)="approveRequest(request)" class="approve">Approuver</button>
+            <button (click)="rejectRequest(request)" class="reject">Rejeter</button>
+            <button (click)="abandonRequest(request)" class="abandon">Abandonner</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

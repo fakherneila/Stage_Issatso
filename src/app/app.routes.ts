@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { FormContainerComponent } from './Student/form-container/form-container';
 import { DeposerRapportComponent } from './Student/deposer-rapport/deposer-rapport';
 import { HistoriqueComponent } from './Student/historique/historique';
-import { DemandeEncadrement } from './Prof/demande-encadrement/demande-encadrement';
-import { Encadrement } from './Prof/encadrement/encadrement';
+import { DemandeEncadrementComponent } from './Prof/demande-encadrement/demande-encadrement';
+import { EncadrementComponent } from './Prof/encadrement/encadrement';
 // import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance'; // Updated import
 import { VoirSoutounanceComponent } from './Prof/voir-soutounance/voir-soutounance';
 
@@ -17,9 +17,9 @@ export const routes: Routes = [
   {
     path: 'prof',
     children: [
-      { path: 'demande-encadrement', component: DemandeEncadrement },
+      { path: 'demande-encadrement', component: DemandeEncadrementComponent },
       { path: 'soutenances', component: VoirSoutounanceComponent }, // Correct component
-      { path: 'encadrement', component: Encadrement }
+      { path: 'encadrement', component: EncadrementComponent }
     ]
   },
 

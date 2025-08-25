@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DemandeEncadrement } from './demande-encadrement';
+import { DemandeEncadrementComponent } from './demande-encadrement';
 
-describe('DemandeEncadrement', () => {
-  let component: DemandeEncadrement;
-  let fixture: ComponentFixture<DemandeEncadrement>;
+describe('DemandeEncadrementComponent', () => {
+  let component: DemandeEncadrementComponent;
+  let fixture: ComponentFixture<DemandeEncadrementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DemandeEncadrement]
+      imports: [DemandeEncadrementComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DemandeEncadrement);
+    fixture = TestBed.createComponent(DemandeEncadrementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
