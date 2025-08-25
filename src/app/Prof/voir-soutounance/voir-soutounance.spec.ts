@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VoirSoutounance } from './voir-soutounance';
+import { VoirSoutounanceComponent } from './voir-soutounance';
 
-describe('VoirSoutounance', () => {
-  let component: VoirSoutounance;
-  let fixture: ComponentFixture<VoirSoutounance>;
+describe('VoirSoutounanceComponent', () => {
+  let component: VoirSoutounanceComponent;
+  let fixture: ComponentFixture<VoirSoutounanceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VoirSoutounance]
+      imports: [VoirSoutounanceComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VoirSoutounance);
+    fixture = TestBed.createComponent(VoirSoutounanceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

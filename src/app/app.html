@@ -1,10 +1,10 @@
 <div class="header">
   <app-header></app-header>
-
 </div>
 <div class="main-content">
   <div class="sidebar-container">
-    <app-sidebar></app-sidebar>
+    <app-sidebar *ngIf="currentSection === 'student'"></app-sidebar>
+    <app-sidebar-prof *ngIf="currentSection === 'prof'"></app-sidebar-prof>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
