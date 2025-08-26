@@ -1,1 +1,83 @@
-<p>annonce-stage works!</p>
+<div class="annonce-stage-container">
+  <div class="filter-bar">
+    <button class="filter-icon" aria-label="Ouvrir les filtres">🔍</button>
+    <label for="filter-type" class="visually-hidden">Type de tri</label>
+    <select id="filter-type" class="filter-type-select" aria-label="Trier par">
+      <option value="">Trie:Filière</option>
+      <option value="filiere">Filière</option>
+      <option value="niveau">Niveau</option>
+      <option value="nom">Nom</option>
+    </select>
+    <label for="filter-month" class="visually-hidden">Mois</label>
+    <input
+      id="filter-month"
+      type="month"
+      class="date-filter"
+      placeholder="Mois"
+      aria-label="Sélectionner un mois"
+    >
+  </div>
+
+  <table class="stage-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nom et prénom</th>
+        <th>Email</th>
+        <th>Statut du stage</th>
+        <th>Nom du société</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of virtualUsers; let i = index" [ngClass]="{'even-row': i % 2 === 0}">
+        <td>
+          <input
+            title="Sélectionner {{ user.name }}"
+            type="checkbox"
+            [(ngModel)]="user.selected"
+            (change)="onSelectionChange(user)"
+            [attr.aria-label]="'Sélectionner ' + user.name"
+            [attr.title]="'Sélectionner ' + user.name"
+          >
+          <img
+            [src]="user.avatar"
+            alt="Avatar de {{ user.name }}"
+            class="avatar"
+            (error)="onImageError($event, user)"
+          >
+        </td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td [ngClass]="{'affected': user.status === 'Affecté', 'not-affected': user.status === 'Non affecté'}">
+          {{ user.status }}
+        </td>
+        <td>{{ user.companyRole }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="select-offer-btn" (click)="openPopup()">Sélectionner offre</button>
+
+  <!-- Popup Modal -->
+  <div class="modal" *ngIf="showPopup" (click)="closePopup()">
+    <div class="modal-content" (click)="stopPropagation($event)">
+      <h2>Offres des sociétés</h2>
+      <p *ngIf="selectedUsers.length === 0">Aucun étudiant sélectionné</p>
+      <div *ngIf="selectedUsers.length > 0">
+        <label for="company-select">Sélectionnez offre</label>
+        <select id="company-select" class="company-select" [(ngModel)]="selectedCompany">
+          <option value="">Sélectionnez offre</option>
+          <option value="Flesk, Info">Flesk, Info</option>
+          <option value="Axia">Axia</option>
+          <option value="Prosym">Prosym</option>
+        </select>
+        <p>Étudiants sélectionnés : {{ selectedUsers.length }}</p>
+        <ul>
+          <li *ngFor="let user of selectedUsers">{{ user.name }} - {{ user.email }}</li>
+        </ul>
+        <button class="assign-btn" (click)="assignInternship()" [disabled]="!selectedCompany">Affecter</button>
+      </div>
+      <button class="close-btn" (click)="closePopup()">Fermer</button>
+    </div>
+  </div>
+</div>

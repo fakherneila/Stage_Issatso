@@ -6,6 +6,10 @@ import { DemandeEncadrementComponent } from './Prof/demande-encadrement/demande-
 import { EncadrementComponent } from './Prof/encadrement/encadrement';
 import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance';
 import { VoirSoutounanceComponent } from './Prof/voir-soutounance/voir-soutounance';
+import { AnnonceStageComponent } from './Admin/annonce-stage/annonce-stage';
+import { ValiderStage } from './Admin/valider-stage/valider-stage';
+import { PlanSoutenance } from './Admin/plan-soutenance/plan-soutenance';
+import { Statistiques } from './Admin/statistiques/statistiques';
 
 export const routes: Routes = [
   // Student routes
@@ -28,10 +32,10 @@ export const routes: Routes = [
   {
     path: 'admin',
     children: [
-      { path: 'annonces-stage', component: FormContainerComponent }, // Placeholder component
-      { path: 'validation-stage', component: FormContainerComponent }, // Placeholder component
-      { path: 'plan-soutenances', component: VoirSoutounanceComponent }, // Reuse existing component
-      { path: 'statistiques', component: HistoriqueComponent } // Placeholder component
+      { path: 'annonces-stage', component: AnnonceStageComponent }, // Placeholder component
+      { path: 'validation-stage', component: ValiderStage }, // Placeholder component
+      { path: 'plan-soutenances', component: PlanSoutenance }, // Reuse existing component
+      { path: 'statistiques', component: Statistiques } // Placeholder component
     ]
   },
 
