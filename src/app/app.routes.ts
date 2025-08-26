@@ -4,13 +4,14 @@ import { DeposerRapportComponent } from './Student/deposer-rapport/deposer-rappo
 import { HistoriqueComponent } from './Student/historique/historique';
 import { DemandeEncadrementComponent } from './Prof/demande-encadrement/demande-encadrement';
 import { EncadrementComponent } from './Prof/encadrement/encadrement';
-// import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance'; // Updated import
+ import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance'; // Updated import
 import { VoirSoutounanceComponent } from './Prof/voir-soutounance/voir-soutounance';
 
 export const routes: Routes = [
   // Student routes
   { path: 'remplir-formulaire', component: FormContainerComponent },
   { path: 'deposer-rapport', component: DeposerRapportComponent },
+  { path: 'voir-soutenance', component: VoirSoutenanceComponent },
   { path: 'historique', component: HistoriqueComponent },
 
   // Prof routes

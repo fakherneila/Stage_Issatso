@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './voir-soutounance-prof.css'
 })
 export class VoirSoutounanceComponent {
-
 }
