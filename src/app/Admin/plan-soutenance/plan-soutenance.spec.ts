@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {  SidebarProfComponent } from './sidebar';
 
-describe('SidebarProfComponent', () => {
-  let component: SidebarProfComponent;
-  let fixture: ComponentFixture<SidebarProfComponent>;
+import { PlanSoutenance } from './plan-soutenance';
+
+describe('PlanSoutenance', () => {
+  let component: PlanSoutenance;
+  let fixture: ComponentFixture<PlanSoutenance>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidebarProfComponent]
+      imports: [PlanSoutenance]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidebarProfComponent);
+    fixture = TestBed.createComponent(PlanSoutenance);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

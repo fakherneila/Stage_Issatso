@@ -4,19 +4,19 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-sidebar-admin',
   standalone: true,
   imports: [MatIconModule, RouterModule, CommonModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
-export class SidebarComponent {
+export class SidebarAdminComponent {
   isStageOpen = false;
   stageItems = [
-    { label: 'Remplir formulaire', route: '/remplir-formulaire' },
-  { label: 'Déposer rapport', route: '/deposer-rapport' },
-  { label: 'Voir soutenance', route: '/voir-soutenance' },
-  { label: 'Historique', route: '/historique' }
+    { label: 'Annonces de stage', route: '/admin/annonces-stage' },
+    { label: 'Validation de Stage', route: '/admin/validation-stage' },
+    { label: 'Plan Soutenance', route: '/admin/plan-soutenances' },
+    { label: 'Statistiques', route: '/admin/statistiques' }
   ];
 
   toggleStage() {
