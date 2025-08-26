@@ -5,17 +5,20 @@ import { CommonModule } from '@angular/common'; // Import CommonModule for NgIf
 import { SidebarComponent } from './Student/sidebar/sidebar'; // app-sidebar (student)
 import { Header } from './Student/header/header';
 import { Aside } from './Student/aside/aside';
-import { SidebarProfComponent } from './Prof/sidebar/sidebar'; // app-sidebar-prof
+import { SidebarProfComponent } from './Prof/sidebar/sidebar';
+import { SidebarAdminComponent } from './Admin/sidebar/sidebar'; // app-sidebar-admin
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     CommonModule, // Add CommonModule for NgIf
     SidebarComponent, // app-sidebar (student)
     SidebarProfComponent, // app-sidebar-prof
     Header,
     Aside,
-    RouterModule
+    RouterModule,
+    SidebarAdminComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -30,7 +33,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        if (event.urlAfterRedirects.startsWith('/prof')) {
+        if (event.urlAfterRedirects.startsWith('/admin')) {
+          this.currentSection = 'admin';
+        } else if (event.urlAfterRedirects.startsWith('/prof')) {
           this.currentSection = 'prof';
         } else {
           this.currentSection = 'student';

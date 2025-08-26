@@ -4,7 +4,7 @@ import { DeposerRapportComponent } from './Student/deposer-rapport/deposer-rappo
 import { HistoriqueComponent } from './Student/historique/historique';
 import { DemandeEncadrementComponent } from './Prof/demande-encadrement/demande-encadrement';
 import { EncadrementComponent } from './Prof/encadrement/encadrement';
- import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance'; // Updated import
+import { VoirSoutenanceComponent } from './Student/voir-soutenance/voir-soutenance';
 import { VoirSoutounanceComponent } from './Prof/voir-soutounance/voir-soutounance';
 
 export const routes: Routes = [
@@ -19,8 +19,19 @@ export const routes: Routes = [
     path: 'prof',
     children: [
       { path: 'demande-encadrement', component: DemandeEncadrementComponent },
-      { path: 'soutenances', component: VoirSoutounanceComponent }, // Correct component
+      { path: 'soutenances', component: VoirSoutounanceComponent },
       { path: 'encadrement', component: EncadrementComponent }
+    ]
+  },
+
+  // Admin routes
+  {
+    path: 'admin',
+    children: [
+      { path: 'annonces-stage', component: FormContainerComponent }, // Placeholder component
+      { path: 'validation-stage', component: FormContainerComponent }, // Placeholder component
+      { path: 'plan-soutenances', component: VoirSoutounanceComponent }, // Reuse existing component
+      { path: 'statistiques', component: HistoriqueComponent } // Placeholder component
     ]
   },
 

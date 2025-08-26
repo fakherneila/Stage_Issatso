@@ -5,6 +5,7 @@
   <div class="sidebar-container">
     <app-sidebar *ngIf="currentSection === 'student'"></app-sidebar>
     <app-sidebar-prof *ngIf="currentSection === 'prof'"></app-sidebar-prof>
+    <app-sidebar-admin *ngIf="currentSection === 'admin'"></app-sidebar-admin>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
