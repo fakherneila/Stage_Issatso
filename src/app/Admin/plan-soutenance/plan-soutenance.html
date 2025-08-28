@@ -1,1 +1,32 @@
-<p>plan-soutenance works!</p>
+<div class="container">
+  <h1>Planification des soutenances</h1>
+  <p class="department">Informatique</p>
+
+  <div class="section">
+    <h2>Etudiants</h2>
+    <div class="card-container">
+      <div class="card" *ngFor="let student of students">
+        <p>Nom: {{ student.name }}</p>
+        <p>Encadrant: {{ student.supervisor }}</p>
+        <p>Code sujet: {{ student.subjectCode }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Professeurs</h2>
+    <div class="card-container">
+      <div class="card selectable" *ngFor="let professor of professors">
+        <p>Nom: {{ professor.name }}</p>
+        <p>Encadrant: {{ professor.supervisor }}</p>
+        <p>Code sujet: {{ professor.subjectCode }}</p>
+        <label>
+          <input type="checkbox" [checked]="professor.selected" />
+          Sélectionner {{ professor.name }}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button class="plan-btn">Planifier</button>
+</div>
