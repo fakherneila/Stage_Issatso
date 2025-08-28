@@ -1,1 +1,25 @@
-<p>valider-stage works!</p>
+<div class="table-container">
+  <table class="stage-table">
+    <thead>
+      <tr>
+        <th>Nom et prenom <span>▼</span></th>
+        <th>Email <span>▼</span></th>
+        <th>Statut du stage <span>▼</span></th>
+        <th>Nom du societe <span>▼</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index" [ngClass]="{'even-row': i % 2 === 0}">
+        <td>
+          <div class="avatar" [title]="user.name">{{ user.name.charAt(0) }}</div>
+          {{ user.name }}
+        </td>
+        <td>{{ user.email }}</td>
+        <td [ngClass]="{'affected': user.status === 'Validé', 'not-affected': user.status === 'En attente'}">
+          {{ user.status }}
+        </td>
+        <td>{{ user.company || '—' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
